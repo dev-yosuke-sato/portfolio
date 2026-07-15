@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/* 
+ * -------------------------------------------------------------
+ * Custom Styles
+ * -------------------------------------------------------------
+ * ※ Tailwind CSSをCDNで利用しているため、基本スタイルはHTMLに依存しています。
+ * 将来的にはビルド環境を構築し、@tailwindディレクティブを用いた管理へ移行することを推奨します。
+ */
+
+/* スムーススクロールのフォールバック (HTML側で tailwindの scroll-smooth を付与済みだが念のため) */
+html {
+	scroll-behavior: smooth;
+}
+
+/* カスタムスクロールバー等の独自指定が必要な場合はここに追記 */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f7f9fb;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #bacac5;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #6b7a76;
+}
