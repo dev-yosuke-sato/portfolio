@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     work1: {
       title: '文京千石おとなこども矯正歯科',
       tags: ['WordPress', 'Dental Clinic'],
-      image: '/images/sengoku.webp',
+      image: './images/sengoku.webp',
       description: `
       <p>
         文京区にある矯正歯科クリニックの新規Webサイト制作を担当しました。
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     work2: {
       title: '株式会社EXISM',
       tags: ['WordPress', 'Corporate'],
-      image: '/images/exism.png',
+      image: './images/exism.png',
       description: `
       <p>
         株式会社EXISMのコーポレートサイト制作を担当しました。
