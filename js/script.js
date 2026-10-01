@@ -4,16 +4,32 @@ document.addEventListener('DOMContentLoaded', () => {
   // -------------------------------------------------------------
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
       const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
 
-      const target = document.querySelector(targetId);
-      if (target) {
+      // "#"だけならトップへ
+      if (targetId === '#') {
+        e.preventDefault();
+
         window.scrollTo({
-          top: target.offsetTop - 80,
+          top: 0,
           behavior: 'smooth',
         });
+
+        return;
+      }
+
+      // "#about"などIDが存在する場合だけ
+      if (targetId.startsWith('#') && targetId.length > 1) {
+        const target = document.querySelector(targetId);
+
+        if (target) {
+          e.preventDefault();
+
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth',
+          });
+        }
       }
     });
   });
@@ -57,35 +73,103 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // データをJS側でオブジェクトとして管理（保守性の向上）
   const projectData = {
-    'project-1': {
-      title: 'Corporate Site Renewal',
-      tags: ['WordPress', 'Performance'],
-      image:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuCCn3C1Yr4z7AqhNFSY7gqfoheVY3AbwlmTjFg1womwfM28PmMJ5A1XxvxVa_2mMr4Wcgv21P15iN2NSeo9S1qR1zMwBCYH384RMTRhl0MhjVGwkOo5AT0lNWliG1hM2PPDsN35Dxoygb25Nb8HJQWsprt5kxcrypPVzKB5zy6RC0nKa1RH7PqkHkZDvviVCGDOsxyR4pwCCN9YRUa1IfxBdzmoRanqQpwkbiUVlQKIJ6Vi_a8fWFrr',
-      description:
-        '<p>16年の知見を活かし、表示速度を300%改善。管理画面の徹底的なカスタマイズで運用負荷を軽減しました。</p><ul class="space-y-2 mt-4"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Core Web Vitalsの最適化</li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> 独自ブロックエディタの開発</li></ul>',
-      link: '#',
+    work1: {
+      title: '文京千石おとなこども矯正歯科',
+      tags: ['WordPress', 'Dental Clinic'],
+      image: './images/sengoku.webp',
+      description: `
+      <p>
+        文京区にある矯正歯科クリニックの新規Webサイト制作を担当しました。
+      </p>
+
+      <p>
+        「清潔感」と「親しみやすさ」をテーマにデザインを設計し、
+        WordPressオリジナルテーマをベースに独自カスタマイズを実施しています。
+      </p>
+
+      <ul class="space-y-2 mt-6">
+        <li class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+          WordPress（オリジナルテーマ）構築
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+          スマホ予約導線の最適化
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+          更新しやすいCMSを構築
+        </li>
+      </ul>
+    `,
+      link: 'https://sengoku-kyousei.com/',
     },
-    'project-2': {
-      title: 'Service LP Production',
-      tags: ['Conversion', 'Engineering'],
-      image:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuA9S1v-5gP6vLG8mkC4ZdLmqqGg5EiTacVEwf4rXTx0joTpGOsYz_ZBCxo9_0oJvNSxhLwBkHGVDW6j6U7TBfD86W8_ALHe8rxKhaBTQh13kw6wEQMkKdkuPnwPwS3Z_Jd-EvB2anPs7hfebxNp2NI7iIER7ZU4DNcbptHbeiCRqu90C8MnAKySMRagqxxkD1w9ZUKyPWF6NFu4zG_EDJ8z1RwJJERjKnAGBIrfXE22aq-JawdDFzxc',
-      description:
-        '<p>精密な要件分析に基づき、ユーザー動線を最適化。Next.jsを用いた高速なページ遷移でCVR向上に貢献。</p><ul class="space-y-2 mt-4"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> A/Bテストに基づくUI改善</li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">check_circle</span> 高速なページロード体験</li></ul>',
-      link: '#',
+
+    work2: {
+      title: '株式会社EXISM',
+      tags: ['WordPress', 'Corporate'],
+      image: './images/exism.png',
+      description: `
+      <p>
+        株式会社EXISMのコーポレートサイト制作を担当しました。
+      </p>
+
+      <p>
+        信頼感と専門性を伝えられるデザインを意識し、
+        WordPressによるCMS化を実施。
+      </p>
+
+      <ul class="space-y-2 mt-6">
+        <li class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+          WordPressサイト制作
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+          レスポンシブ対応
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+          SEO・表示速度最適化
+        </li>
+      </ul>
+    `,
+      link: 'https://www.exism.co.jp/',
     },
-    'project-3': {
-      title: 'Custom System Integration',
-      tags: ['Complex JS', 'Logic'],
-      image:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuA7-LzkvUhMcuKXEdR-Ze3mwPvH3ycosgCVXQGdjZ69TNHKbVdKli6CbAfsX5cfvp9AE90fNUmmi1QQDO1-CWMIMIXLdTRtsuXSGcm0alo0D5rTFjeGJVFpjIvTu1z8DhEWAGiKDUYXIveLlLdyLQxLVeOAwg6rFltua77JhZzguEsGyWSGCiXiQMCV80m9U4pq9LmYknolW3mVUUrDmrI91Kso8GzoMWuIQJSG6OLnHo_bYpOXu27F',
-      description:
-        '<p>複雑なビジネスロジックをフロントエンドに実装。API連携と状態管理を高度に制御し、堅牢なシステムを構築。</p><ul class="space-y-2 mt-4"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> リアルタイムデータ同期</li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> 拡張性の高いアーキテクチャ</li></ul>',
-      link: '#',
+
+    work3: {
+      title: 'トントゥフェスティバル2026',
+      tags: ['WordPress', 'Event Site'],
+      image: './images/tonttuproject.jpg',
+      description: `
+      <p>
+        福祉施設や障がいのある方々とともにつくるインクルーシブなフェス
+        「トントゥフェスティバル2026」のサイト制作に、コーディング担当として参加しました。
+      </p>
+
+      <p>
+        マルシェ・ステージ・ワークショップなどコンテンツ量の多いデザインを
+        WordPressオリジナルテーマへ忠実に実装しています。
+      </p>
+
+      <ul class="space-y-2 mt-6">
+        <li class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+          WordPressオリジナルテーマへの実装
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+          ニュース・動画・絵本・4コマ漫画のCMS管理化
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+          レスポンシブ対応
+        </li>
+      </ul>
+    `,
+      link: 'https://tonttuproject.com/',
     },
   };
-
   if (modal && closeBtn && backdrop) {
     const openModal = (data) => {
       document.getElementById('modal-title').textContent = data.title;
@@ -137,3 +221,55 @@ document.addEventListener('DOMContentLoaded', () => {
     backdrop.addEventListener('click', closeModal);
   }
 });
+
+// -------------------------------------------------------------
+// Mobile Menu Logic (Full-screen White Background)
+// -------------------------------------------------------------
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu'); // 新しいHTMLのIDに合わせる
+const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+if (mobileMenuToggle && mobileMenu && mobileMenuIcon) {
+  const toggleMenu = () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+
+    if (isOpen) {
+      // 閉じるアニメーション
+      mobileMenu.classList.remove('opacity-100');
+      mobileMenu.classList.add('opacity-0');
+      mobileMenuIcon.textContent = 'menu'; // アイコンを三本線に戻す
+
+      // アニメーション完了後にDOMを非表示にする
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        document.body.style.overflow = ''; // スクロールロック解除
+      }, 300);
+    } else {
+      // 開く処理
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+
+      requestAnimationFrame(() => {
+        mobileMenu.classList.remove('opacity-0');
+        mobileMenu.classList.add('opacity-100');
+      });
+
+      mobileMenuIcon.textContent = 'close'; // アイコンを×に変更
+      document.body.style.overflow = 'hidden'; // スクロールロック
+    }
+  };
+
+  // トグルボタンでの開閉
+  mobileMenuToggle.addEventListener('click', toggleMenu);
+
+  // リンククリック時もメニューを閉じる
+  mobileLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (!mobileMenu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+  });
+}
