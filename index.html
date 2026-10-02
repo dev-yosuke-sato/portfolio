@@ -1,514 +1,423 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="ja">
+<html lang="ja">
 <head>
 	<meta charset="utf-8">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<title>Yosuke Sato Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Yosuke Sato | Webディレクター / WordPressエンジニア / コーダー</title>
+	<meta name="description" content="建築鉄骨の設計・CADで培った16年の経験を活かし、要件定義から設計・WordPress開発・コーディング・運用までを担当するフリーランスのポートフォリオ。秋田県。">
+	<meta name="theme-color" content="#f3f1ec">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Yosuke Sato | Webディレクター / WordPressエンジニア / コーダー">
+	<meta property="og:description" content="図面を引くように、Webをつくる。建築鉄骨CAD16年の経験をWeb制作に。">
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16.png">
 	<link rel="icon" href="./images/favicon.ico">
 	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
-	<!-- Fonts & Icons -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700;900&display=swap"
-		rel="stylesheet">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block"
-		rel="stylesheet">
-	<!-- Custom CSS -->
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<script>document.documentElement.classList.add('js');</script>
 	<link rel="stylesheet" href="css/style.css">
-	<!-- Tailwind CSS (CDN - プロトタイプ用。本番ではビルド推奨) -->
-	<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-	<script id="tailwind-config">
-		try {
-			tailwind.config = {
-				darkMode: "class",
-				theme: {
-					extend: {
-						"colors": {
-							"tertiary-container": "#c6b3ff",
-							"inverse-on-surface": "#eff1f3",
-							"surface-container-lowest": "#ffffff",
-							"surface-container": "#eceef0",
-							"surface-container-low": "#f2f4f6",
-							"surface-variant": "#e0e3e5",
-							"on-error-container": "#93000a",
-							"on-tertiary": "#ffffff",
-							"inverse-surface": "#2d3133",
-							"primary-fixed-dim": "#3cddc7",
-							"on-tertiary-fixed": "#21005e",
-							"secondary-fixed": "#ffe24c",
-							"background": "#f7f9fb",
-							"error-container": "#ffdad6",
-							"on-secondary": "#ffffff",
-							"on-primary": "#ffffff",
-							"on-secondary-fixed-variant": "#524600",
-							"surface-container-high": "#e6e8ea",
-							"inverse-primary": "#3cddc7",
-							"on-primary-fixed": "#00201c",
-							"outline-variant": "#bacac5",
-							"secondary-container": "#fcdf46",
-							"surface": "#f7f9fb",
-							"secondary-fixed-dim": "#e2c62d",
-							"surface-container-highest": "#e0e3e5",
-							"on-secondary-container": "#726200",
-							"secondary": "#6d5e00",
-							"on-secondary-fixed": "#211b00",
-							"on-background": "#191c1e",
-							"on-tertiary-fixed-variant": "#4f319c",
-							"on-error": "#ffffff",
-							"tertiary-fixed": "#e8ddff",
-							"on-primary-container": "#00574d",
-							"primary": "#006b5f",
-							"error": "#ba1a1a",
-							"primary-fixed": "#62fae3",
-							"on-surface-variant": "#3c4a46",
-							"tertiary-fixed-dim": "#cebdff",
-							"surface-tint": "#006b5f",
-							"on-tertiary-container": "#5538a2",
-							"on-surface": "#191c1e",
-							"primary-container": "#2dd4bf",
-							"on-primary-fixed-variant": "#005047",
-							"tertiary": "#674bb5",
-							"surface-bright": "#f7f9fb",
-							"surface-dim": "#d8dadc",
-							"outline": "#6b7a76"
-						},
-						"borderRadius": {
-							"DEFAULT": "1rem",
-							"lg": "2rem",
-							"xl": "3rem",
-							"full": "9999px"
-						},
-						"spacing": {
-							"gutter": "24px",
-							"container-max": "1200px",
-							"margin-mobile": "20px",
-							"base": "8px",
-							"section-gap": "80px"
-						},
-						"fontFamily": {
-							"headline-md": ["Plus Jakarta Sans", "Noto Sans JP"],
-							"body-lg": ["Plus Jakarta Sans", "Noto Sans JP"],
-							"headline-lg": ["Plus Jakarta Sans", "Noto Sans JP"],
-							"display": ["Plus Jakarta Sans", "Noto Sans JP"],
-							"display-mobile": ["Plus Jakarta Sans", "Noto Sans JP"],
-							"label-md": ["Plus Jakarta Sans", "Noto Sans JP"],
-							"headline-lg-mobile": ["Plus Jakarta Sans", "Noto Sans JP"],
-							"body-md": ["Plus Jakarta Sans", "Noto Sans JP"]
-						},
-						"fontSize": {
-							"headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
-							"body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
-							"headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
-							"display": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-							"display-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800" }],
-							"label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }],
-							"headline-lg-mobile": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
-							"body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
-						}
-					},
-				},
-			}
-		} catch (_e) { console.error("Tailwind config error", _e); }
-	</script>
 </head>
-<body class="bg-surface text-on-surface">
-	<!-- TopNavBar -->
-	<nav class="fixed top-0 w-full z-50 glass-nav bg-surface/80 shadow-sm backdrop-blur-md">
-		<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile py-4 min-h-[5rem]">
-			<a class="font-display font-extrabold text-primary shrink-0 leading-[1.1] tracking-tight" href="#">
-				<span class="block text-3xl">Yosuke Sato</span>
-				<span class="block text-3xl">Portfolio.</span>
+<body>
+	<a class="skip" href="#works">本文へスキップ</a>
+
+	<!-- ============ HEADER ============ -->
+	<header class="site-header" id="top">
+		<div class="wrap site-header__in">
+			<a class="brand" href="#top" aria-label="Yosuke Sato ポートフォリオ トップへ">
+				<span class="brand__mark" aria-hidden="true">YS</span>
+				<span class="brand__name">Yosuke Sato<small>Web Director / Engineer / Coder</small></span>
 			</a>
-			<div class="hidden md:flex gap-8 items-center">
-				<a class="text-base text-on-surface hover:text-primary transition-colors font-medium whitespace-nowrap"
-					href="#process">制作の流れ</a>
-				<a class="text-base text-on-surface hover:text-primary transition-colors font-medium whitespace-nowrap"
-					href="#about">私について</a>
-				<a class="text-base text-on-surface hover:text-primary transition-colors font-medium whitespace-nowrap"
-					href="#services">サービス</a>
-				<a class="text-base text-on-surface hover:text-primary transition-colors font-medium whitespace-nowrap"
-					href="#works">制作実績</a>
-				<a class="text-base bg-primary text-on-primary px-6 py-2 rounded-full font-bold hover:bg-primary-container hover:text-on-primary-container transition-colors whitespace-nowrap"
-					href="#contact">お問い合わせ</a>
-			</div>
-			<!-- モバイル用 Menu Toggle (操作用のIDと、前面に出すためのz-indexを付与) -->
-			<button id="mobile-menu-toggle" class="md:hidden text-primary relative z-[70]">
-				<span id="mobile-menu-icon"
-					class="material-symbols-outlined text-3xl transition-transform duration-300">menu</span>
+			<nav class="gnav" id="gnav" aria-label="メインメニュー">
+				<a href="#works"><span>01</span>Works</a>
+				<a href="#about"><span>02</span>About</a>
+				<a href="#service"><span>03</span>Service</a>
+				<a href="#contact"><span>04</span>Contact</a>
+				<a class="gnav__cta" href="https://lin.ee/u1JQc3ca" target="_blank" rel="noopener noreferrer">LINEで相談 <i aria-hidden="true">→</i></a>
+			</nav>
+			<button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="gnav" aria-label="メニューを開く">
+				<span></span><span></span>
 			</button>
-		</div>
-		<!-- モバイル用ナビゲーションメニュー本体 (デフォルトは非表示設定) -->
-		<div id="mobile-menu"
-			class="fixed inset-0 w-full h-[100dvh] bg-white z-[60] hidden flex-col items-center justify-center gap-8 opacity-0 transition-opacity duration-300">
-			<a class="mobile-link text-2xl text-on-surface font-bold hover:text-primary transition-colors"
-				href="#process">制作の流れ</a>
-			<a class="mobile-link text-2xl text-on-surface font-bold hover:text-primary transition-colors"
-				href="#about">私について</a>
-			<a class="mobile-link text-2xl text-on-surface font-bold hover:text-primary transition-colors"
-				href="#services">サービス</a>
-			<a class="mobile-link text-2xl text-on-surface font-bold hover:text-primary transition-colors"
-				href="#works">制作実績</a>
-			<a class="mobile-link text-xl bg-primary text-on-primary px-8 py-3 rounded-full font-bold hover:bg-primary-container hover:text-on-primary-container transition-colors"
-				href="#contact">お問い合わせ</a>
-		</div>
-	</nav>
-	<!-- Hero Section -->
-	<header class="relative pt-32 pb-20 overflow-hidden bg-surface">
-		<div
-			class="relative max-w-container-max mx-auto px-margin-mobile flex flex-col md:flex-row items-center gap-12">
-			<div class="flex-1 text-center md:text-left">
-				<div
-					class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md mb-6 uppercase tracking-wider">
-					Webディレクター / WordPressエンジニア </div>
-				<h1 class="font-display text-display-mobile md:text-display text-on-surface leading-tight mb-6">
-					Webに、<span class="text-primary">確かな精度</span>と<br>彩りを。 </h1>
-				<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-10"> 建築鉄骨業界で培った16年の設計・提案経験を活かし、
-					論理的な設計力と丁寧なコミュニケーションで、 成果につながるWebサイトを制作します。 </p>
-				<div class="flex flex-wrap gap-4 justify-center md:justify-start">
-					<a class="px-8 py-4 bg-primary text-on-primary rounded-full font-bold text-lg pop-shadow-hover transition-all"
-						href="#contact"> プロジェクトの相談をする </a>
-					<a class="px-8 py-4 border-2 border-primary text-primary rounded-full font-bold text-lg hover:bg-primary/5 transition-all"
-						href="#about"> 私について </a>
-				</div>
-			</div>
-			<div class="flex-1 flex justify-center">
-				<div class="relative">
-					<div
-						class="w-72 h-72 md:w-96 md:h-96 rounded-xl overflow-hidden shadow-xl rotate-3 hover:rotate-0 transition-transform duration-500 bg-tertiary-fixed">
-						<img class="w-full h-full object-cover" data-alt="Portrait" src="./images/yosukesato.png">
-					</div>
-					<div
-						class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg flex items-center gap-4 animate-bounce">
-						<img src="./images/pro.png" alt="Professional" class="w-12 h-12">
-						<div>
-							<p class="font-bold text-on-surface"> 16年の社会人経験 </p>
-							<p class="text-sm text-on-surface-variant"> 設計・営業・Web制作 </p>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</header>
-	<!-- Strengths -->
-	<section class="py-section-gap bg-surface-container-low transition-all duration-700" id="process">
-		<!-- コンテンツは元のまま省略せず維持 -->
-		<div class="max-w-container-max mx-auto px-margin-mobile">
-			<div class="text-center mb-16">
-				<h2 class="font-display text-headline-lg text-on-surface mb-4">強み</h2>
-				<p class="text-on-surface-variant max-w-2xl mx-auto">培ってきた技術と、プロジェクトを成功に導くための3つの柱。</p>
-			</div>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<!-- Strength 1 -->
-				<div
-					class="bg-surface-container-lowest p-10 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-6">
-					<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center">
-						<img src="./images/wordpress.png" alt="PHP Icon" class="w-10 h-10 object-contain">
+
+	<main>
+		<!-- ============ HERO / COVER SHEET ============ -->
+		<section class="hero" aria-labelledby="hero-title">
+			<div class="wrap hero__grid">
+				<div class="hero__text">
+					<p class="kicker"><span>//</span> Web Director / WordPress Engineer / Coder</p>
+					<h1 class="hero__title" id="hero-title">図面を引くように、<br>Webをつくる<span class="caret" aria-hidden="true"></span></h1>
+					<p class="hero__lead">建築鉄骨の設計・CADで培った16年。要件を整理し、仕様に落とし、手戻りの少ない進め方でコードにする。ディレクションから実装、公開後の運用まで、窓口ひとつで担当します。</p>
+					<div class="hero__cta">
+						<a class="btn btn--solid" href="#works">実績を見る <i aria-hidden="true">↓</i></a>
+						<a class="btn" href="https://lin.ee/u1JQc3ca" target="_blank" rel="noopener noreferrer">LINEで相談する <i aria-hidden="true">→</i></a>
 					</div>
-					<div>
-						<h3 class="font-headline-md text-headline-md text-on-surface mb-3">WordPressの専門知識</h3>
-						<p class="text-on-surface-variant">複雑なカスタム投稿や高度なセキュリティ対策まで。16年間の経験で培った「壊れない・使いやすい」サイト構築。</p>
-					</div>
-				</div>
-				<!-- Strength 2 -->
-				<div
-					class="bg-surface-container-lowest p-10 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-6">
-					<div class="w-16 h-16 bg-tertiary-container rounded-2xl flex items-center justify-center">
-						<img src="./images/precision.png" alt="Analysis Icon" class="w-10 h-10 object-contain">
-					</div>
-					<div>
-						<h3 class="font-headline-md text-headline-md text-on-surface mb-3">精密な要件分析</h3>
-						<p class="text-on-surface-variant">曖昧な要望を具体的な要件へ。ビジネスゴールから逆算した、論理的で精度の高いディレクションを提供します。</p>
-					</div>
-				</div>
-				<!-- Strength 3 -->
-				<div
-					class="bg-surface-container-lowest p-10 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-6">
-					<div class="w-16 h-16 bg-secondary-container rounded-2xl flex items-center justify-center">
-						<img src="./images/speed.png" alt="Speed Icon" class="w-10 h-10 object-contain">
-					</div>
-					<div>
-						<h3 class="font-headline-md text-headline-md text-on-surface mb-3">圧倒的なスピード</h3>
-						<p class="text-on-surface-variant">無駄を削ぎ落としたワークフローにより、高品質な成果物をスピーディに納品。レスポンスは常に24時間以内。</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Experience Timeline -->
-	<section class="py-section-gap bg-surface-container transition-all duration-700" id="about">
-		<div class="max-w-container-max mx-auto px-margin-mobile">
-			<h2 class="font-display text-headline-lg text-on-surface mb-16 text-center">経歴と専門性</h2>
-			<div class="relative space-y-12">
-				<div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-surface-variant md:-translate-x-1/2">
-				</div>
-				<!-- Timeline Item 1 -->
-				<div class="relative flex flex-col md:flex-row items-center gap-8 md:gap-0">
-					<div class="md:w-1/2 md:pr-16 text-right order-2 md:order-1">
-						<h4 class="font-bold text-primary text-xl mb-2">2024.10 - 現在</h4>
-						<h3 class="font-headline-md text-headline-md text-on-surface mb-3">フリーランス Web制作 / 講師</h3>
-						<p class="text-on-surface-variant">フロントエンドエンジニア / Webディレクター / プログラミング<br>スクール講師</p>
-					</div>
-					<div
-						class="absolute left-[-4px] md:left-1/2 w-3 h-3 bg-primary rounded-full md:-translate-x-1/2 z-10 border-4 border-surface-container">
-					</div>
-					<div class="md:w-1/2 md:pl-16 order-3"></div>
-				</div>
-				<!-- Timeline Item 2 -->
-				<div class="relative flex flex-col md:flex-row items-center gap-8 md:gap-0">
-					<div class="md:w-1/2 md:pr-16 order-1"></div>
-					<div
-						class="absolute left-[-4px] md:left-1/2 w-3 h-3 bg-tertiary rounded-full md:-translate-x-1/2 z-10 border-4 border-surface-container">
-					</div>
-					<div class="md:w-1/2 md:pl-16 order-2">
-						<h4 class="font-bold text-tertiary text-xl mb-2">2018.10 - 2024.10</h4>
-						<h3 class="font-headline-md text-headline-md text-on-surface mb-3">畠山工業株式会社</h3>
-						<p class="text-on-surface-variant">CADオペレーター・営業職として6年勤務。図面作成と並行し、クライアント交渉を担当。</p>
-					</div>
-				</div>
-				<!-- Timeline Item 3 -->
-				<div class="relative flex flex-col md:flex-row items-center gap-8 md:gap-0">
-					<div class="md:w-1/2 md:pr-16 text-right order-2 md:order-1">
-						<h4 class="font-bold text-secondary text-xl mb-2">2008.04 - 2018.05</h4>
-						<h3 class="font-headline-md text-headline-md text-on-surface mb-3">石垣鐵工株式会社</h3>
-						<p class="text-on-surface-variant">製造部設計課にてCADオペレーターとして10年勤務。鉄骨構造の基礎<br>から応用までを経験。</p>
-					</div>
-					<div
-						class="absolute left-[-4px] md:left-1/2 w-3 h-3 bg-secondary rounded-full md:-translate-x-1/2 z-10 border-4 border-surface-container">
-					</div>
-					<div class="md:w-1/2 md:pl-16 order-3"></div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Services Section -->
-	<section class="py-section-gap bg-surface-container-lowest transition-all duration-700" id="services">
-		<div class="max-w-container-max mx-auto px-margin-mobile">
-			<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-				<div>
-					<h2 class="font-display text-headline-lg text-on-surface mb-4">提供サービス</h2>
-					<p class="text-on-surface-variant">企画から開発、保守運用までトータルでサポートします。</p>
-				</div>
-				<div class="hidden md:block h-px flex-1 bg-outline-variant mx-10 mb-4"></div>
-			</div>
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-				<div
-					class="group p-base bg-surface-container-low rounded-lg border border-surface-variant hover:border-primary transition-colors duration-300">
-					<div class="flex flex-col md:flex-row gap-8 p-8">
-						<div class="w-full md:w-48 h-48 rounded-md overflow-hidden shrink-0">
-							<img src="./images/web.png" alt="Web Direction"
-								class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+					<dl class="roles">
+						<div class="role">
+							<dt>Director</dt>
+							<dd>要件定義 / 情報設計<br>進行管理 / 品質管理</dd>
 						</div>
-						<div>
-							<span
-								class="text-primary font-bold text-sm tracking-widest uppercase mb-2 block">ディレクション</span>
-							<h4 class="font-headline-md text-headline-md text-on-surface mb-4">ウェブディレクション</h4>
-							<ul class="space-y-3">
-								<li class="flex items-center gap-3 text-on-surface-variant">
-									<div class="w-2 h-2 rounded-full bg-primary"></div> 要件定義・情報設計
-								</li>
-								<li class="flex items-center gap-3 text-on-surface-variant">
-									<div class="w-2 h-2 rounded-full bg-primary"></div> スケジュール・進行管理
-								</li>
-								<li class="flex items-center gap-3 text-on-surface-variant">
-									<div class="w-2 h-2 rounded-full bg-primary"></div> クオリティコントロール
-								</li>
+						<div class="role">
+							<dt>Engineer</dt>
+							<dd>WordPress開発<br>カスタム投稿 / 保守運用</dd>
+						</div>
+						<div class="role">
+							<dt>Coder</dt>
+							<dd>レスポンシブ実装<br>表示速度 / SEO</dd>
+						</div>
+					</dl>
+				</div>
+
+				<div class="hero__visual" aria-label="制作したサイトの画面">
+					<div class="dim dim--h hv__dim1" aria-hidden="true"><i></i><span>1440 px</span><i></i></div>
+					<figure class="browser hv__main" data-lb data-group="hero">
+						<div class="browser__bar"><span>tonttuproject.com</span><span>PC</span></div>
+						<img src="./images/works/tonttu-d-1.webp" width="1440" height="900" alt="トントゥフェスティバル2026のPC表示。左にイベント概要、中央にポスターのビジュアル、右に写真が並ぶトップ画面" fetchpriority="high">
+					</figure>
+					<figure class="phone hv__p1" data-lb data-group="hero">
+						<img src="./images/works/sengoku-m-1.webp" width="585" height="1266" alt="文京千石おとなこども矯正歯科のスマホ表示。「千石で、家族でも通える矯正歯科。」のファーストビュー">
+					</figure>
+					<figure class="phone hv__p2" data-lb data-group="hero">
+						<img src="./images/works/tonttu-m-2.webp" width="585" height="1266" alt="トントゥフェスティバル2026のスマホ表示。コンセプトを紹介するセクション">
+					</figure>
+				</div>
+			</div>
+			<p class="hero__note wrap"><b>SHEET 00</b> 表紙 — 公開中のサイトを実寸で掲載しています。画像をクリックすると拡大できます。</p>
+		</section>
+
+		<!-- ============ 01 WORKS ============ -->
+		<section class="sec" id="works" aria-labelledby="works-h">
+			<div class="wrap">
+				<header class="sec-head">
+					<span class="sec-head__num">01</span>
+					<h2 id="works-h">Works<small>制作実績</small></h2>
+					<span class="sec-head__rule" aria-hidden="true"></span>
+					<span class="sec-head__sheet">SHEET 01 / 04</span>
+				</header>
+
+				<!-- ---- W-01 TONTTU ---- -->
+				<article class="work reveal" id="work-tonttu">
+					<div class="work__head">
+						<span class="work__id">W-01</span>
+						<h3 class="work__title">トントゥフェスティバル2026</h3>
+						<a class="work__link" href="https://tonttuproject.com/" target="_blank" rel="noopener noreferrer">tonttuproject.com <i aria-hidden="true">↗</i></a>
+					</div>
+					<div class="work__body">
+						<div class="work__text">
+							<ul class="tags"><li>WordPress</li><li>Event Site</li></ul>
+							<p>福祉施設や障がいのある方々とともにつくるインクルーシブなフェス「トントゥフェスティバル2026」のサイトを、コーディング担当として実装しました。</p>
+							<p>マルシェ・ステージ・ワークショップなど情報量の多いデザインをWordPressオリジナルテーマに忠実に落とし込み、ニュースや動画・絵本・4コマ漫画といった更新頻度の高いコンテンツを管理画面から運用できる構成にしています。</p>
+						</div>
+						<div class="work__spec">
+							<dl class="spec">
+								<div><dt>担当</dt><dd>コーディング・実装</dd></div>
+								<div><dt>構成</dt><dd>WordPress（オリジナルテーマ）</dd></div>
+								<div><dt>対応</dt><dd>PC / スマートフォン</dd></div>
+							</dl>
+							<ul class="checks">
+								<li>WordPressオリジナルテーマへの実装</li>
+								<li>ニュース・動画・絵本・4コマ漫画のCMS管理化</li>
+								<li>レスポンシブ対応</li>
 							</ul>
 						</div>
 					</div>
-				</div>
-				<div
-					class="group p-base bg-surface-container-low rounded-lg border border-surface-variant hover:border-tertiary transition-colors duration-300">
-					<div class="flex flex-col md:flex-row gap-8 p-8">
-						<div class="w-full md:w-48 h-48 rounded-md overflow-hidden shrink-0">
-							<img src="./images/engineering.jpg" alt="Engineering"
-								class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+					<div class="gal">
+						<figure class="browser g8" data-lb data-group="tonttu">
+								<div class="browser__bar"><span>tonttuproject.com</span><span>1440 × 900</span></div>
+								<img src="./images/works/tonttu-d-1.webp" width="1440" height="900" loading="lazy" alt="トントゥフェスティバル2026 PC表示：トップ。イベント概要・ポスター・写真の3ペイン構成">
+								<figcaption>FIG.1 トップ（PC）</figcaption>
+							</figure>
+						<figure class="phone" data-lb data-group="tonttu"><img src="./images/works/tonttu-m-1.webp" width="585" height="1266" loading="lazy" alt="スマホ表示：ポスタービジュアル"><figcaption>FIG.2</figcaption></figure>
+						<figure class="phone" data-lb data-group="tonttu"><img src="./images/works/tonttu-m-2.webp" width="585" height="1266" loading="lazy" alt="スマホ表示：コンセプトとニュース"><figcaption>FIG.3</figcaption></figure>
+						<figure class="browser g4" data-lb data-group="tonttu"><div class="browser__bar"><span>コンテンツ一覧</span><span>PC</span></div><img src="./images/works/tonttu-d-2.webp" width="1440" height="900" loading="lazy" alt="PC表示：マルシェ・キッチンカー・ステージなどのコンテンツ一覧"><figcaption>FIG.4 コンテンツ（PC）</figcaption></figure>
+						<figure class="browser g4" data-lb data-group="tonttu"><div class="browser__bar"><span>会場マップ</span><span>PC</span></div><img src="./images/works/tonttu-d-3.webp" width="1440" height="900" loading="lazy" alt="PC表示：会場マップ"><figcaption>FIG.5 会場マップ（PC）</figcaption></figure>
+						<figure class="phone" data-lb data-group="tonttu"><img src="./images/works/tonttu-m-3.webp" width="585" height="1266" loading="lazy" alt="スマホ表示：タイムスケジュール"><figcaption>FIG.6 タイムスケジュール</figcaption></figure>
+						<figure class="phone" data-lb data-group="tonttu"><img src="./images/works/tonttu-m-4.webp" width="585" height="1266" loading="lazy" alt="スマホ表示：アクセス"><figcaption>FIG.7 アクセス</figcaption></figure>
+					</div>
+				</article>
+
+				<!-- ---- W-02 SENGOKU ---- -->
+				<article class="work work--side reveal" id="work-sengoku">
+					<div class="work__head">
+						<span class="work__id">W-02</span>
+						<h3 class="work__title">文京千石おとなこども矯正歯科</h3>
+						<a class="work__link" href="https://sengoku-kyousei.com/" target="_blank" rel="noopener noreferrer">sengoku-kyousei.com <i aria-hidden="true">↗</i></a>
+					</div>
+					<div class="work__body">
+						<div class="work__text">
+							<ul class="tags"><li>WordPress</li><li>Dental Clinic</li></ul>
+							<p>文京区にある矯正歯科クリニックの新規Webサイト。「清潔感と親しみやすさを両立させたい」という要望に、高品質なビジュアル選定と余白を活かしたデザインで応えました。</p>
+							<p>WordPressオリジナルテーマをベースに開発し、お知らせや診療カレンダーをクリニック側で更新できるCMSを構築。スマートフォンからの予約動線を最適化しています。</p>
 						</div>
-						<div>
-							<span
-								class="text-tertiary font-bold text-sm tracking-widest uppercase mb-2 block">デベロップメント</span>
-							<h4 class="font-headline-md text-headline-md text-on-surface mb-4">エンジニアリング</h4>
-							<ul class="space-y-3">
-								<li class="flex items-center gap-3 text-on-surface-variant">
-									<div class="w-2 h-2 rounded-full bg-tertiary"></div> WordPress 高度なカスタマイズ
-								</li>
-								<li class="flex items-center gap-3 text-on-surface-variant">
-									<div class="w-2 h-2 rounded-full bg-tertiary"></div> レスポンシブ実装
-								</li>
-								<li class="flex items-center gap-3 text-on-surface-variant">
-									<div class="w-2 h-2 rounded-full bg-tertiary"></div> サイト保守・高速化対応
-								</li>
+						<div class="work__spec">
+							<dl class="spec">
+								<div><dt>担当</dt><dd>Webサイト制作</dd></div>
+								<div><dt>構成</dt><dd>WordPress（オリジナルテーマ）</dd></div>
+								<div><dt>対応</dt><dd>スマートフォン最適化</dd></div>
+							</dl>
+							<ul class="checks">
+								<li>WordPress（オリジナルテーマ）構築</li>
+								<li>スマホ予約導線の最適化</li>
+								<li>更新しやすいCMSを構築</li>
 							</ul>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Works Section -->
-	<section class="py-section-gap bg-surface-container-high transition-all duration-700" id="works">
-		<div class="max-w-container-max mx-auto px-margin-mobile">
-			<div class="text-center mb-16">
-				<h2 class="font-display text-headline-lg text-on-surface mb-4">制作実績</h2>
-				<p class="text-on-surface-variant max-w-2xl mx-auto">技術と精度でビジネスの課題を解決した、最近のプロジェクト事例です。</p>
-			</div>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				<!-- Work 3 -->
-				<div
-					class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
-					<div class="h-48 overflow-hidden">
-						<img src="./images/tonttuproject.jpg" alt="トントゥフェスティバル2026"
-							class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+					<div class="gal gal--p4">
+						<figure class="phone" data-lb data-group="sengoku"><img src="./images/works/sengoku-m-1.webp" width="585" height="1266" loading="lazy" alt="スマホ表示：ファーストビュー。予約ボタンを画面下部に固定"><figcaption>FIG.1 トップ</figcaption></figure>
+						<figure class="phone" data-lb data-group="sengoku"><img src="./images/works/sengoku-m-2.webp" width="585" height="1266" loading="lazy" alt="スマホ表示：当院が大切にしていること"><figcaption>FIG.2 理念</figcaption></figure>
+						<figure class="phone" data-lb data-group="sengoku"><img src="./images/works/sengoku-m-3.webp" width="585" height="1266" loading="lazy" alt="スマホ表示：こんなお悩みはありませんか？のチェックリスト"><figcaption>FIG.3 お悩み</figcaption></figure>
+						<figure class="phone" data-lb data-group="sengoku"><img src="./images/works/sengoku-m-4.webp" width="585" height="1266" loading="lazy" alt="スマホ表示：よくある質問とおすすめの方"><figcaption>FIG.4 FAQ</figcaption></figure>
 					</div>
-					<div class="p-8">
-						<span
-							class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-label-md font-bold mb-4">
-							WordPress / Event Site </span>
-						<h3 class="font-headline-md text-xl text-on-surface mb-3"> トントゥフェスティバル2026 </h3>
-						<p class="text-on-surface-variant text-sm mb-6"> 福祉施設や障がいのある方々とともにつくるインクルーシブなフェス「トントゥフェスティバル2026」のサイト制作にコーディング担当として参加しました。
-							マルシェやステージ、ワークショップなどコンテンツ量の多いデザインを、WordPressオリジナルテーマへ忠実に実装し、ニュースや動画・絵本・4コマ漫画といった更新頻度の高いコンテンツをCMSで管理できる構成にしています。
-							多様な訪問者が快適に閲覧できるよう、レスポンシブ対応も丁寧に行いました。 </p>
-						<a href="#" data-project-id="work3"
-							class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"> 詳細を見る
-							<span class="material-symbols-outlined">arrow_forward</span>
-						</a>
+					<p class="work__note">※ 公開サイトはスマートフォン向けの縦長レイアウトを主軸に設計しています（PC表示も同構成）。</p>
+				</article>
+
+				<!-- ---- W-03 EXISM ---- -->
+				<article class="work reveal" id="work-exism">
+					<div class="work__head">
+						<span class="work__id">W-03</span>
+						<h3 class="work__title">株式会社EXISM</h3>
+						<a class="work__link" href="https://www.exism.co.jp/" target="_blank" rel="noopener noreferrer">exism.co.jp <i aria-hidden="true">↗</i></a>
 					</div>
-				</div>
-				<!-- Work 1 -->
-				<div
-					class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
-					<div class="h-48 overflow-hidden">
-						<img alt="Corporate Site Renewal"
-							class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-							src="./images/sengoku.webp">
-					</div>
-					<div class="p-8">
-						<span
-							class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-label-md font-bold mb-4">WordPress
-							/ Performance</span>
-						<h3 class="font-headline-md text-xl text-on-surface mb-3">文京千石おとなこども矯正歯科</h3>
-						<p class="text-on-surface-variant text-sm mb-6">
-							文京区にある矯正歯科クリニックの新規Webサイト制作プロジェクト。クライアントからの「清潔感と親しみやすさを両立させたい」という要望に対し、高品質なビジュアル選定と余白を活かしたデザインでアプローチしました。
-							WordPressのオリジナルテーマをベースに開発を行い、独自のカスタマイズを施すことで、クリニック側で容易にお知らせや診療カレンダーを更新できる堅牢なCMSを構築しています。また、スマートフォンからの予約動線を最適化し、コンバージョン率の向上に貢献しました。
-						</p>
-						<a href="#" data-project-id="work1"
-							class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"> 詳細を見る
-							<span class="material-symbols-outlined">arrow_forward</span>
-						</a>
-					</div>
-				</div>
-				<!-- Work 2 -->
-				<div
-					class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
-					<div class="h-48 overflow-hidden">
-						<img src="./images/exism.png" alt="株式会社EXISM"
-							class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-					</div>
-					<div class="p-8">
-						<span
-							class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-label-md font-bold mb-4">
-							WordPress / Corporate </span>
-						<h3 class="font-headline-md text-xl text-on-surface mb-3"> 株式会社EXISM </h3>
-						<p class="text-on-surface-variant text-sm mb-6"> 株式会社EXISMのコーポレートサイト制作を担当しました。
-							企業の信頼感と専門性を伝えられるデザインを意識し、レスポンシブ対応を前提としたWordPressサイトとして構築しています。
-							サービス紹介やお知らせなどの更新を管理画面から簡単に行えるようカスタマイズを実施し、運用しやすいCMSを実現しました。
-							また、表示速度の最適化やSEOを考慮したコーディングを行い、ユーザーが必要な情報へスムーズにアクセスできるサイト設計を行っています。 </p>
-						<a href="#" data-project-id="work2"
-							class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all"> 詳細を見る
-							<span class="material-symbols-outlined">arrow_forward</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Working Style -->
-	<section class="py-section-gap bg-surface transition-all duration-700">
-		<div class="max-w-container-max mx-auto px-margin-mobile">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-				<div class="p-12 bg-surface-container-lowest rounded-lg shadow-sm">
-					<h2 class="font-display text-headline-lg text-on-surface mb-8">ワークスタイル</h2>
-					<div class="space-y-8">
-						<div class="flex items-start gap-4">
-							<img src="./images/time.png" alt="Time Icon" class="w-12 h-12 shrink-0">
-							<div>
-								<h4 class="font-bold text-lg text-on-surface mb-1">稼働時間</h4>
-								<p class="text-on-surface-variant font-headline-md text-headline-md">平日 9:00 〜 18:00</p>
-								<p class="text-sm text-on-surface-variant mt-2">
-									専業フリーランスとして、プロジェクトに安定したリソースを提供します。土日・祝日のお問い合わせにも柔軟に対応いたしますので、お急ぎの案件も安心してお任せください。</p>
-							</div>
+					<div class="work__body">
+						<div class="work__text">
+							<ul class="tags"><li>WordPress</li><li>Corporate</li></ul>
+							<p>株式会社EXISMのコーポレートサイト。企業の信頼感と専門性が伝わるデザインを意識し、レスポンシブ対応のWordPressサイトとして構築しました。</p>
+							<p>サービス紹介やお知らせを管理画面から更新できるようカスタマイズし、表示速度の最適化とSEOを考慮したコーディングを行っています。</p>
 						</div>
-						<div class="flex items-start gap-4">
-							<img src="./images/response.png" alt="Response Icon" class="w-12 h-12 shrink-0">
-							<div>
-								<h4 class="font-bold text-lg text-on-surface mb-1">レスポンス</h4>
-								<p class="text-on-surface-variant font-headline-md text-headline-md">24時間以内</p>
-								<p class="text-sm text-on-surface-variant mt-2">LINE, Slack, Chatwork,
-									メールなど、ご希望のツールで迅速に返信します。 </p>
-							</div>
+						<div class="work__spec">
+							<dl class="spec">
+								<div><dt>担当</dt><dd>コーポレートサイト制作</dd></div>
+								<div><dt>構成</dt><dd>WordPress</dd></div>
+								<div><dt>対応</dt><dd>PC / スマートフォン</dd></div>
+							</dl>
+							<ul class="checks">
+								<li>WordPressサイト制作</li>
+								<li>レスポンシブ対応</li>
+								<li>SEO・表示速度最適化</li>
+							</ul>
 						</div>
 					</div>
+					<div class="gal">
+						<figure class="browser g6" data-lb data-group="exism">
+								<div class="browser__bar"><span>exism.co.jp</span><span>1440 × 900</span></div>
+								<img src="./images/works/exism-d-1.webp" width="1440" height="900" loading="lazy" alt="株式会社EXISM PC表示：ファーストビュー。祭りの写真に企業メッセージを重ねた全画面ヒーロー">
+								<figcaption>FIG.1 トップ（PC）</figcaption>
+							</figure>
+						<figure class="phone" data-lb data-group="exism"><img src="./images/works/exism-m-1.webp" width="585" height="1266" loading="lazy" alt="スマホ表示：ファーストビュー"><figcaption>FIG.2</figcaption></figure>
+						<figure class="phone" data-lb data-group="exism"><img src="./images/works/exism-m-2.webp" width="585" height="1266" loading="lazy" alt="スマホ表示：事業内容（XML・XSL・CSS）"><figcaption>FIG.3</figcaption></figure>
+						<figure class="phone" data-lb data-group="exism"><img src="./images/works/exism-m-3.webp" width="585" height="1266" loading="lazy" alt="スマホ表示：会社概要"><figcaption>FIG.7 会社概要</figcaption></figure>
+						<figure class="browser g4" data-lb data-group="exism"><div class="browser__bar"><span>事業内容</span><span>PC</span></div><img src="./images/works/exism-d-2.webp" width="1440" height="900" loading="lazy" alt="PC表示：事業内容。XML・XSL・CSSの紹介"><figcaption>FIG.4 事業内容（PC）</figcaption></figure>
+						<figure class="browser g4" data-lb data-group="exism"><div class="browser__bar"><span>会社概要</span><span>PC</span></div><img src="./images/works/exism-d-3.webp" width="1440" height="900" loading="lazy" alt="PC表示：会社概要"><figcaption>FIG.5 会社概要（PC）</figcaption></figure>
+						<figure class="browser g4" data-lb data-group="exism"><div class="browser__bar"><span>会社沿革＆ニュース</span><span>PC</span></div><img src="./images/works/exism-d-4.webp" width="1440" height="900" loading="lazy" alt="PC表示：会社沿革とニュース"><figcaption>FIG.6 沿革・ニュース（PC）</figcaption></figure>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<!-- ============ 02 ABOUT ============ -->
+		<section class="sec sec--tint" id="about" aria-labelledby="about-h">
+			<div class="wrap">
+				<header class="sec-head">
+					<span class="sec-head__num">02</span>
+					<h2 id="about-h">About<small>私について</small></h2>
+					<span class="sec-head__rule" aria-hidden="true"></span>
+					<span class="sec-head__sheet">SHEET 02 / 04</span>
+				</header>
+
+				<div class="about__grid">
+					<figure class="portrait reveal">
+						<div class="reg"><img src="./images/yosukesato.webp" width="1000" height="831" loading="lazy" alt="Yosuke Sato の顔写真"></div>
+						<figcaption><b>FIG.0</b> PORTRAIT — Yosuke Sato / Akita, JP</figcaption>
+					</figure>
+
+					<div class="about__body reveal">
+						<h3 class="about__lead">建築鉄骨の「図面」から、<br>Webの「設計」へ。</h3>
+						<p>石垣鐵工で10年、CADオペレーターとして鉄骨構造の設計に携わり、畠山工業では図面作成と並行して営業・クライアント交渉を担当しました。設計・提案・折衝。この16年で身につけた「要件を整理して、形にして、相手に伝える」流れは、Web制作でもそのまま活きています。</p>
+						<p>2024年10月からはフリーランスとして、Webディレクション・WordPress開発・コーディングに加え、プログラミングスクールの講師も務めています。</p>
+
+						<ul class="stats">
+							<li><b>16<small>年</small></b><span>設計・営業・Web制作の社会人経験</span></li>
+							<li><b>24<small>h</small></b><span>返信の目安<br>LINE / Slack / Chatwork / メール</span></li>
+							<li><b>9–18<small>時</small></b><span>平日の稼働時間<br>土日祝のご連絡にも対応</span></li>
+						</ul>
+					</div>
 				</div>
-				<div class="text-center md:text-left">
-					<h3 class="font-display text-headline-lg text-on-surface mb-6">あなたのビジネスに、<br
-							class="hidden md:block">確かな技術と彩りを。</h3>
-					<p class="text-on-surface-variant text-body-lg mb-10">
-						技術的な課題から、デザインの方向性、運用コストの最適化まで。まずはお気軽に現在のお悩みをお聞かせください。16年の経験に基づいた最適なソリューションをご提案します。</p>
-					<a class="inline-flex items-center gap-3 px-10 py-5 bg-[#06C755] text-white rounded-full font-bold text-xl shadow-lg hover:shadow-xl hover:bg-[#05b34c] transition-all"
-						href="https://lin.ee/u1JQc3ca" target="_blank" rel="noopener noreferrer"> LINEで聞いてみる <span
-							class="material-symbols-outlined">arrow_forward</span>
-					</a>
+
+				<div class="rev reveal">
+					<h3 class="rev__title"><span>REVISION</span>経歴 — 改訂履歴</h3>
+					<table class="rev__table">
+						<thead><tr><th>REV.</th><th>期間</th><th>所属 / 役割</th><th>内容</th></tr></thead>
+						<tbody>
+							<tr>
+								<td data-l="REV.">C</td>
+								<td data-l="期間">2024.10 – 現在</td>
+								<td data-l="所属 / 役割"><b>フリーランス</b>Web制作 / 講師</td>
+								<td data-l="内容">フロントエンドエンジニア / Webディレクター / プログラミングスクール講師</td>
+							</tr>
+							<tr>
+								<td data-l="REV.">B</td>
+								<td data-l="期間">2018.10 – 2024.10</td>
+								<td data-l="所属 / 役割"><b>畠山工業株式会社</b>CADオペレーター・営業</td>
+								<td data-l="内容">CADオペレーター・営業職として6年勤務。図面作成と並行し、クライアント交渉を担当。</td>
+							</tr>
+							<tr>
+								<td data-l="REV.">A</td>
+								<td data-l="期間">2008.04 – 2018.05</td>
+								<td data-l="所属 / 役割"><b>石垣鐵工株式会社</b>製造部 設計課</td>
+								<td data-l="内容">CADオペレーターとして10年勤務。鉄骨構造の基礎から応用までを経験。</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div class="span" aria-hidden="true">
+						<div class="dim dim--h span__dim"><i></i><span>16 yrs — 設計・営業</span><i></i></div>
+						<div class="span__bar">
+							<b class="span__a" style="flex:10.1">石垣鐵工</b>
+							<b class="span__gap" style="flex:.4"></b>
+							<b class="span__b" style="flex:6">畠山工業</b>
+							<b class="span__c" style="flex:2">Web</b>
+						</div>
+						<div class="span__ticks"><span style="left:0">2008</span><span style="left:54.6%">2018</span><span style="left:86.5%">2024</span><span style="right:0">2026</span></div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- Footer -->
-	<footer class="bg-surface-container-low py-20" id="contact">
-		<div
-			class="max-w-container-max mx-auto px-margin-mobile flex flex-col lg:flex-row justify-between items-center gap-10">
-			<div class="text-center lg:text-left">
-				<a class="font-display text-headline-md font-bold text-primary mb-4 block" href="#">Yosuke Sato
-					Portfolio.</a>
-				<p class="font-body-md text-body-md text-on-surface-variant">© 2026 Yosuke Sato Portfolio.</p>
+		</section>
+
+		<!-- ============ 03 SERVICE ============ -->
+		<section class="sec" id="service" aria-labelledby="service-h">
+			<div class="wrap">
+				<header class="sec-head">
+					<span class="sec-head__num">03</span>
+					<h2 id="service-h">Service<small>提供サービス</small></h2>
+					<span class="sec-head__rule" aria-hidden="true"></span>
+					<span class="sec-head__sheet">SHEET 03 / 04</span>
+				</header>
+				<p class="sec-lead">企画から開発、保守運用までトータルでサポートします。</p>
+
+				<ol class="strengths">
+					<li class="reveal">
+						<span class="strengths__n">01</span>
+						<h3>WordPressの専門知識</h3>
+						<p>複雑なカスタム投稿から、セキュリティ対策まで。「壊れない・使いやすい」サイトづくりを大切にしています。</p>
+					</li>
+					<li class="reveal">
+						<span class="strengths__n">02</span>
+						<h3>精密な要件分析</h3>
+						<p>曖昧な要望を具体的な要件へ。ビジネスゴールから逆算して、論理的で精度の高いディレクションを行います。</p>
+					</li>
+					<li class="reveal">
+						<span class="strengths__n">03</span>
+						<h3>迅速な対応と納品</h3>
+						<p>無駄を削ぎ落としたワークフローで、成果物をスピーディに納品。レスポンスは24時間以内です。</p>
+					</li>
+				</ol>
+
+				<div class="panels">
+					<!-- DIRECTION -->
+					<article class="panel reveal">
+						<header class="panel__head"><span>A</span><h3>Direction<small>ウェブディレクション</small></h3></header>
+						<figure class="gantt" aria-label="工程表の例。要件定義から保守までの流れ">
+							<div class="gantt__axis" aria-hidden="true"><span>要件</span><span>設計</span><span>実装</span><span>検証</span><span>公開・運用</span></div>
+							<div class="gantt__row"><label>要件定義・情報設計</label><i class="bar bar--d" style="grid-column:2/4"></i></div>
+							<div class="gantt__row"><label>スケジュール・進行管理</label><i class="bar bar--d bar--thin" style="grid-column:2/7"></i></div>
+							<div class="gantt__row"><label>WordPressカスタマイズ</label><i class="bar bar--e" style="grid-column:3/5"></i></div>
+							<div class="gantt__row"><label>レスポンシブ実装</label><i class="bar bar--e" style="grid-column:4/6"></i></div>
+							<div class="gantt__row"><label>クオリティコントロール</label><i class="bar bar--q" style="grid-column:5/6"></i></div>
+							<div class="gantt__row"><label>保守・高速化対応</label><i class="bar bar--e bar--open" style="grid-column:6/7"></i></div>
+							<figcaption><b>FIG.A</b> 工程表（例）<span class="lg"><i class="lg__d"></i>Direction<i class="lg__e"></i>Engineering<i class="lg__q"></i>QC</span></figcaption>
+						</figure>
+						<ul class="checks">
+							<li>要件定義・情報設計</li>
+							<li>スケジュール・進行管理</li>
+							<li>クオリティコントロール</li>
+						</ul>
+					</article>
+
+					<!-- ENGINEERING -->
+					<article class="panel reveal">
+						<header class="panel__head"><span>B</span><h3>Engineering<small>エンジニアリング</small></h3></header>
+						<figure class="code" aria-label="WordPressのカスタム投稿タイプ登録コードの例">
+							<div class="code__bar"><span>functions.php</span><span>PHP</span></div>
+<pre><code><span class="c">// お知らせを管理画面から更新できるように、カスタム投稿を登録</span>
+<span class="k">add_action</span>(<span class="s">'init'</span>, <span class="k">function</span> () {
+  <span class="f">register_post_type</span>(<span class="s">'news'</span>, [
+    <span class="s">'label'</span>        =&gt; <span class="s">'お知らせ'</span>,
+    <span class="s">'public'</span>       =&gt; <span class="n">true</span>,
+    <span class="s">'has_archive'</span>  =&gt; <span class="n">true</span>,
+    <span class="s">'show_in_rest'</span> =&gt; <span class="n">true</span>,
+    <span class="s">'supports'</span>     =&gt; [<span class="s">'title'</span>, <span class="s">'editor'</span>, <span class="s">'thumbnail'</span>],
+  ]);
+});</code></pre>
+							<figcaption><b>FIG.B</b> カスタム投稿の登録（例）</figcaption>
+						</figure>
+						<ul class="checks">
+							<li>WordPress 高度なカスタマイズ</li>
+							<li>レスポンシブ実装</li>
+							<li>サイト保守・高速化対応</li>
+						</ul>
+					</article>
+				</div>
 			</div>
-			<div class="text-center lg:text-right">
-				<p class="text-sm text-on-surface-variant mb-2">活動拠点</p>
-				<p class="font-bold text-on-surface">秋田県, 日本</p>
+		</section>
+
+		<!-- ============ 04 CONTACT ============ -->
+		<section class="sec contact" id="contact" aria-labelledby="contact-h">
+			<div class="contact__bg" aria-hidden="true"></div>
+			<div class="wrap contact__in">
+				<header class="sec-head sec-head--dark">
+					<span class="sec-head__num">04</span>
+					<h2 id="contact-h">Contact<small>お問い合わせ</small></h2>
+					<span class="sec-head__rule" aria-hidden="true"></span>
+					<span class="sec-head__sheet">SHEET 04 / 04</span>
+				</header>
+
+				<div class="contact__grid">
+					<div class="contact__copy reveal">
+						<h3>まずは、いまのお悩みを<br>お聞かせください。</h3>
+						<p>技術的な課題から、デザインの方向性、運用コストの最適化まで。16年の経験に基づいた最適なソリューションをご提案します。</p>
+						<a class="btn btn--line" href="https://lin.ee/u1JQc3ca" target="_blank" rel="noopener noreferrer">LINEで聞いてみる <i aria-hidden="true">→</i></a>
+					</div>
+					<figure class="code code--cfg reveal" aria-label="ワークスタイルの設定">
+						<div class="code__bar"><span>working-style.yml</span><span>YAML</span></div>
+<pre><code><span class="c"># 稼働時間・連絡手段</span>
+<span class="k">hours</span>:    <span class="s">平日 9:00 – 18:00</span>   <span class="c"># 土日祝のご連絡にも柔軟に対応</span>
+<span class="k">response</span>: <span class="s">24時間以内</span>
+<span class="k">channels</span>: [<span class="s">LINE</span>, <span class="s">Slack</span>, <span class="s">Chatwork</span>, <span class="s">メール</span>]
+<span class="k">status</span>:   <span class="s">専業フリーランス</span>     <span class="c"># 安定したリソースを提供</span></code></pre>
+					</figure>
+				</div>
 			</div>
+		</section>
+	</main>
+
+	<!-- ============ FOOTER / TITLE BLOCK ============ -->
+	<footer class="site-footer">
+		<div class="wrap">
+			<dl class="titleblock">
+				<div class="tb tb--wide"><dt>図面名 / TITLE</dt><dd>Yosuke Sato — Portfolio</dd></div>
+				<div class="tb"><dt>作成 / DRAWN</dt><dd>Yosuke Sato</dd></div>
+				<div class="tb"><dt>所在 / LOCATION</dt><dd>秋田県, 日本</dd></div>
+				<div class="tb"><dt>改訂 / REV.</dt><dd>2026.10</dd></div>
+			</dl>
+			<p class="copy">© 2026 Yosuke Sato</p>
 		</div>
 	</footer>
-	<!-- Modal Base -->
-	<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 opacity-0 pointer-events-none transition-all duration-300"
-		id="project-modal">
-		<div class="absolute inset-0 bg-surface-dim/60 backdrop-blur-md" id="modal-backdrop"></div>
-		<div
-			class="relative bg-surface-container-lowest w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl shadow-xl transform scale-95 transition-transform duration-300">
-			<button
-				class="absolute top-4 right-4 z-10 flex items-center gap-2 px-4 py-2 bg-surface-container-high hover:bg-surface-variant rounded-full text-on-surface transition-colors"
-				id="close-modal">
-				<span class="material-symbols-outlined">close</span>
-				<span class="font-label-md">閉じる</span>
-			</button>
-			<div class="flex flex-col">
-				<div class="w-full h-[65vh] overflow-hidden">
-					<img id="modal-image" class="w-full h-full object-cover" src="" alt="">
-				</div>
-				<div class="md:w-1/2 p-8 md:p-12 flex flex-col">
-					<div class="flex flex-wrap gap-2 mb-6" id="modal-tags"></div>
-					<h3 class="font-display text-headline-lg text-on-surface mb-4" id="modal-title"></h3>
-					<div class="text-on-surface-variant space-y-4 mb-10" id="modal-description"></div>
-					<div class="mt-auto">
-						<a class="inline-flex items-center gap-3 px-8 py-4 bg-primary text-on-primary rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all"
-							href="#" id="modal-link" target="_blank"> サイトを見る <span
-								class="material-symbols-outlined">open_in_new</span> </a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- UI Logic -->
+
+	<!-- ============ LIGHTBOX ============ -->
+	<dialog class="lightbox" id="lightbox" aria-label="画像の拡大表示">
+		<button class="lightbox__close" id="lb-close" aria-label="閉じる">✕</button>
+		<button class="lightbox__nav lightbox__nav--prev" id="lb-prev" aria-label="前の画像">←</button>
+		<button class="lightbox__nav lightbox__nav--next" id="lb-next" aria-label="次の画像">→</button>
+		<figure class="lightbox__fig">
+			<img id="lb-img" src="" alt="">
+			<figcaption id="lb-cap"></figcaption>
+		</figure>
+	</dialog>
+
 	<script src="js/script.js"></script>
 </body>
 </html>
