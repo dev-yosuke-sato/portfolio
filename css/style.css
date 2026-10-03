@@ -243,7 +243,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .portrait .reg::before, .portrait .reg::after { content: ''; position: absolute; width: 22px; height: 22px; border: 2px solid var(--teal); }
 .portrait .reg::before { top: -8px; left: -8px; border-right: 0; border-bottom: 0; }
 .portrait .reg::after { bottom: -8px; right: -8px; border-left: 0; border-top: 0; }
-.portrait img { width: 100%; aspect-ratio: 4 / 3.7; object-fit: cover; object-position: 50% 30%; filter: grayscale(.2) contrast(1.03); }
+.portrait img { width: 100%; aspect-ratio: 9 / 10; object-fit: cover; object-position: 50% 30%; }
 .portrait figcaption { font-family: var(--mono); font-size: 11px; color: var(--ink-3); margin-top: 12px; letter-spacing: .03em; }
 .portrait figcaption b { color: var(--ink); margin-right: 6px; }
 
@@ -269,16 +269,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .rev__table td b { display: block; font-weight: 700; font-size: 15px; }
 
 .span { margin-top: 34px; }
-.span__dim { margin-bottom: 10px; }
-.span__bar { display: flex; gap: 2px; height: 44px; }
-.span__bar b { display: grid; place-items: center; font-family: var(--mono); font-size: 12px; font-weight: 500; color: #fff; overflow: hidden; white-space: nowrap; }
+.span__bar { display: flex; gap: 2px; height: 26px; }
 .span__a { background: var(--ink); }
 .span__b { background: var(--ink-2); }
 .span__c { background: var(--teal); }
 .span__gap { background: repeating-linear-gradient(45deg, var(--line-soft) 0 3px, transparent 3px 6px); }
-.span__ticks { position: relative; height: 22px; margin-top: 6px; font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
-.span__ticks span { position: absolute; top: 0; padding-left: 6px; border-left: 1px solid var(--ink-3); }
-.span__ticks span[style*='right'] { padding: 0 6px 0 0; border: 0; border-right: 1px solid var(--ink-3); }
+.span__key { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 14px; }
+.span__key li { border-top: 3px solid var(--ink); padding-top: 10px; display: grid; gap: 1px; }
+.span__key .k-b { border-color: var(--ink-2); }
+.span__key .k-c { border-color: var(--teal); }
+.span__key span { font-family: var(--mono); font-size: 12px; color: var(--ink-3); letter-spacing: .02em; }
+.span__key b { font-size: 15px; font-weight: 700; }
+.span__key em { font-style: normal; font-size: 12.5px; color: var(--ink-2); }
 
 /* ---------- Service ---------- */
 .strengths { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--ink); background: var(--white); margin-bottom: clamp(40px, 6vw, 72px); }
@@ -392,11 +394,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .js .strengths li.reveal:nth-child(2) { transition-delay: .08s; }
 .js .strengths li.reveal:nth-child(3) { transition-delay: .16s; }
 
+/* 「視差効果を減らす」設定でも、移動を伴わない穏やかな動き（フェード・点滅）は残す */
 @media (prefers-reduced-motion: reduce) {
 	html { scroll-behavior: auto; }
-	.caret { animation: none; }
-	.js .reveal { opacity: 1; transform: none; transition: none; }
-	.js .gantt .bar { transform: none; transition: none; }
+	.js .reveal { transform: none; transition: opacity .8s ease; }
+	.js .gantt .bar { transform: none; opacity: 0; transition: opacity .8s ease; }
+	.gantt.is-in .bar { opacity: 1; }
+	[data-lb], .btn i { transition: none; }
 }
 
 /* ==========================================================
@@ -490,8 +494,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 	.stats li { border-right: 0; border-bottom: 1px solid var(--ink); display: grid; grid-template-columns: 5.4em 1fr; align-items: center; gap: 0 14px; padding: 14px 16px; }
 	.stats li:last-child { border-bottom: 0; }
 	.stats span { margin: 0; }
-	.span__bar { height: 36px; }
-	.span__bar b { font-size: 10px; }
+	.span__key { grid-template-columns: 1fr; gap: 10px; }
+	.span__key li { grid-template-columns: auto 1fr; align-items: baseline; gap: 0 12px; }
+	.span__key em { grid-column: 2; }
+	.span__key span { grid-column: 1 / -1; }
 
 	.panel__head { padding: 14px 16px; flex-wrap: wrap; gap: 8px 12px; }
 	.panel__head h3 small { display: block; margin: 2px 0 0; }
